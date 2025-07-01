@@ -42,6 +42,89 @@
 </a>
 
         </div>
+
+        <div class="mt-5">
+          <% if(data.length > 0){ %>
+            <div class=" w-[1230px] mx-auto flex-wrap pt-10 flex justify-evenly items-center">
+
+            <% data.map((ele)=>{  %>
+
+             
+  <div class="relative text-start flex w-80 flex-col rounded-xl bg-gray-700 text-white bg-clip-border text-gray-700 shadow-md">
+  <div class="relative  mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+    <img class=" h-48  object-fill  w-100" src="<%= ele.image %>" alt="product image" />
+  </div>
+  
+  <div class="p-6">
+    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+    Title: <%= ele.title %>
+    </h5>
+    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+    Description: <%= ele.description %>
+    </p>
+    <div class="flex mt-1 justify-between items0center">
+      <h1>
+
+       Rating: <%= ele.rating %>
+      </h1>
+      <h1>
+
+       Releasse Date: <%= ele.date %>
+      </h1>
+    </div>
+  </div>
+  <div class="p-6 pt-0 flex justify-between  ">
+<!-- From Uiverse.io by seyed-mohsen-mousavi --> 
+<button
+  class="inline-flex items-center px-4 py-2 bg-red-600 transition ease-in-out delay-75 hover:bg-red-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110"
+>
+  <svg
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    fill="none"
+    class="h-5 w-5 mr-2"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+      stroke-width="2"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    ></path>
+  </svg>
+
+  Delete
+</button>
+
+<!-- From Uiverse.io by M4rio1 --> 
+<button
+  class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 ease-in-out delay-75 hover:bg-blue-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110 active:scale-95 transition-all duration-200"
+>
+  <svg
+    class="h-5 w-5 mr-1 self-center items-center"
+    fill="none"
+    stroke="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+    ></path>
+  </svg>
+  Edit
+</button>
+
+  </div>
+</div>
+
+<%     }) %>
+</div>
+            
+         <% } else{ %>
+            <h1 class="text-5xl pt-5 font-mono">
+              No Movies Added Yet!!!
+            </h1>
+        <% }%>
+        </div>
     </div>
 </body>
 </html>

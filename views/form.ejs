@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
     <title>Document</title>
 </head>
@@ -14,21 +15,115 @@
 
             <!-- component -->
 <!-- This is an example component -->
-<div class="max-w-2xl mx-auto my-5 bg-gray-700 rounded-xl p-16">
+<div class="max-w-2xl mx-auto my-5 font-mono bg-gray-700 rounded-xl p-16">
 
-	<form>
+	<form action="/insertmovie" method="post" enctype="multipart/form-data">
     <div class="grid mb-6 text-start ">
         <div>
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Name</label>
-            <input type="text"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5" placeholder="Movie Name" name="title" required>
+            <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Name</label>
+            <input type="text" class="bg-gray-900 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5" placeholder="Movie Name" name="title" >
         </div>
-        <div>
+        <div> 
             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Description</label>
 
             <textarea name="description" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5" placeholder="Movie Description" id=""></textarea>
         </div>
+        <div> 
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Rating :</label>
+            <select name="rating" class="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5" id="">
+              <%  ["--select rating--","⭐","⭐⭐","⭐⭐⭐","⭐⭐⭐⭐","⭐⭐⭐⭐⭐"].map((ele)=>{  %>
+                
+                    <option value="<%=ele%>">
+                        <%=ele%>
+                    </option>
+               <% })%>
+            </select>
+                <!-- <input name="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5" placeholder="Movie Rating" id=""> -->
+        </div>
+              <div>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Director</label>
+            <input type="text" class="bg-gray-900 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5" placeholder="Movie Director" name="director" >
+        </div>
+        
+        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Genre</label>
+        <div class="flex gap-4 mb-3">
+                <div>
+                            <input type="checkbox"  class="" placeholder="Movie Director" name="genre" value="Horror" >
+                            <label for="">Horror</label>
+                </div>
+                <div>
+                            <input type="checkbox"  placeholder="Movie Director" name="genre" value="Comedy" >
+                            <label for="">Comedy</label>
+                </div>
+                <div>
+                            <input type="checkbox"  placeholder="Movie Director" name="genre" value="Action" >
+                            <label for="">Action</label>
+                </div>
+                <div>
+                            <input type="checkbox"  placeholder="Movie Director" name="genre" value="Thrill" >
+                            <label for="">Thrill</label>
+                </div>
+        </div>
+        
+        <div class="mt-2 mb-4">
+    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Release Date</label>
 
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    <div class="relative max-w-sm">
+
+  <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+      </svg>
+  </div>
+  <input id="datepicker-autohide" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5   dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="date" placeholder="Select date">
+</div>
+</div>
+        <div class="mt-2 mb-4">
+    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Movie Poster </label>
+
+    
+  <input type="file" class="bg-gray-900 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5" placeholder="Movie Poster" name="image" >
+
+</div>
+
+<!-- From Uiverse.io by Centered101 --> 
+<a href="">
+    <button
+  type="submit"
+  class="relative bottom-0 flex justify-center items-center gap-2 border border-[#000] rounded-xl text-[#FFF] font-black bg-[#000] uppercase px-8 py-2 z-10 overflow-hidden ease-in-out duration-700 group hover:text-[#000] hover:bg-[#FFF] active:scale-95 active:duration-0 focus:bg-[#FFF] focus:text-[#000] isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFF] before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700"
+>
+  <span
+    class="truncate eaes-in-out duration-300 group-active:-translate-x-96 group-focus:translate-x-96"
+    >Send Message</span
+  >
+  <div
+    class="absolute flex flex-row justify-center items-center gap-2 -translate-x-96 eaes-in-out duration-300 group-active:translate-x-0 group-focus:translate-x-0"
+  >
+    <div
+      class="animate-spin size-4 border-2 border-[#000] border-t-transparent rounded-full"
+    ></div>
+    Processing...
+  </div>
+  <svg
+    class="fill-[#FFF] group-hover:fill-[#000] group-hover:-translate-x-0 group-active:translate-x-96 group-active:duration-0 group-focus:translate-x-96 group-focus:fill-[#000] ease-in-out duration-700"
+    stroke="currentColor"
+    fill="currentColor"
+    stroke-width="0"
+    viewBox="0 0 512 512"
+    height="16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m476.59 227.05-.16-.07L49.35 49.84A23.56 23.56 0 0 0 27.14 52 24.65 24.65 0 0 0 16 72.59v113.29a24 24 0 0 0 19.52 23.57l232.93 43.07a4 4 0 0 1 0 7.86L35.53 303.45A24 24 0 0 0 16 327v113.31A23.57 23.57 0 0 0 26.59 460a23.94 23.94 0 0 0 13.22 4 24.55 24.55 0 0 0 9.52-1.93L476.4 285.94l.19-.09a32 32 0 0 0 0-58.8z"
+    ></path>
+  </svg>
+</button>
+</a>
+
+
+
+
 </form>
 
 
