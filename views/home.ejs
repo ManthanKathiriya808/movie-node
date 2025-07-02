@@ -45,12 +45,12 @@
 
         <div class="mt-5">
           <% if(data.length > 0){ %>
-            <div class=" w-[1230px] mx-auto flex-wrap pt-10 flex justify-evenly items-center">
+            <div class=" w-[1230px] mx-auto flex-wrap pt-5 flex justify-evenly items-center">
 
             <% data.map((ele)=>{  %>
 
              
-  <div class="relative text-start flex w-80 flex-col rounded-xl bg-gray-700 text-white bg-clip-border text-gray-700 shadow-md">
+  <div class="relative text-start flex mt-10 w-80 flex-col rounded-xl bg-gray-700 text-white bg-clip-border text-gray-700 shadow-md">
   <div class="relative  mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
     <img class=" h-48  object-fill  w-100" src="<%= ele.image %>" alt="product image" />
   </div>
@@ -75,7 +75,8 @@
   </div>
   <div class="p-6 pt-0 flex justify-between  ">
 <!-- From Uiverse.io by seyed-mohsen-mousavi --> 
-<button
+<a href="/deletemovie/<%=ele.id%>">
+  <button
   class="inline-flex items-center px-4 py-2 bg-red-600 transition ease-in-out delay-75 hover:bg-red-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110"
 >
   <svg
@@ -95,9 +96,11 @@
 
   Delete
 </button>
+</a>
 
-<!-- From Uiverse.io by M4rio1 --> 
-<button
+<!-- From Uiverse.io by M4rio1 -->
+ <a href="/updatemovie/<%=ele.id%>">
+  <button
   class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 ease-in-out delay-75 hover:bg-blue-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110 active:scale-95 transition-all duration-200"
 >
   <svg
@@ -112,6 +115,7 @@
   </svg>
   Edit
 </button>
+ </a>
 
   </div>
 </div>
